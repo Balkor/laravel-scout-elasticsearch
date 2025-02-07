@@ -2,6 +2,7 @@
 
 return [
     'host' => env('ELASTICSEARCH_HOST'),
+    'ssl_verification' => env('ELASTICSEARCH_SSL_VERIFICATION', false),
     'indices' => [
         'mappings' => [
             'default' => [

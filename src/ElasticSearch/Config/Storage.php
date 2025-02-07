@@ -47,6 +47,16 @@ class Storage
         return $this->loadConfig('password');
     }
 
+    public function sslVerification(): bool
+    {
+        return (bool) ($this->loadConfig('ssl_verification') ?? true);
+    }
+
+    public function scoutPrefix(): string
+    {
+        return config('scout.prefix', '');
+    }
+
     /**
      * @param  string  $path
      * @return mixed

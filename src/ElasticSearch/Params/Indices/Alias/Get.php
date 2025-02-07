@@ -2,6 +2,8 @@
 
 namespace Matchish\ScoutElasticSearch\ElasticSearch\Params\Indices\Alias;
 
+use Matchish\ScoutElasticSearch\ElasticSearch\Config\Config;
+
 /**
  * @internal
  */
@@ -41,7 +43,7 @@ final class Get
 
     public static function anyIndex(string $alias): Get
     {
-        $prefix = config('scout.prefix', '');
+        $prefix = Config::scoutPrefix();
 
         return new static($alias, $prefix.'*');
     }
